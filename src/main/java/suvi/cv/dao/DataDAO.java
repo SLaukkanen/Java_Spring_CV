@@ -1,5 +1,11 @@
 package suvi.cv.dao;
 
-public class DataDAO {
+import java.util.List;
+
+import suvi.cv.bean.Data;
+
+public interface DataDAO {
+	
+	public abstract List<Data> findAll();
 
 }

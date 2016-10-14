@@ -6,6 +6,6 @@ CREATE TABLE Data (
 	,area_code CHAR(5) 
 	,city VARCHAR(30) 
 	,phone VARCHAR(15)
-	, heading VARCHAR(30)
+	,heading VARCHAR(30)
 	,summary VARCHAR(600)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
