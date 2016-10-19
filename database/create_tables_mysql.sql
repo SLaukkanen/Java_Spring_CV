@@ -1,6 +1,8 @@
 CREATE TABLE Data (
-	first_name VARCHAR(10) NOT NULL
+	id INT NOT NULL AUTO_INCREMENT
+	,first_name VARCHAR(10) NOT NULL
 	,last_name VARCHAR(10) NOT NULL
+	,birth_day DATE
 	,email VARCHAR(50) NOT NULL
 	,address VARCHAR(55) 
 	,area_code CHAR(5) 
@@ -8,4 +10,42 @@ CREATE TABLE Data (
 	,phone VARCHAR(15)
 	,heading VARCHAR(30)
 	,summary VARCHAR(600)
+	,PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE Education (
+	id INT NOT NULL AUTO_INCREMENT
+	,school VARCHAR(50) NOT NULL
+	,degree VARCHAR(50) NOT NULL
+	,major VARCHAR(50) NOT NULL
+	,minors VARCHAR(100)
+	,start_year INT(4)
+	,finish_year INT(4)
+	,date_graduation DATE
+	,description VARCHAR(500)
+	,PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE WorkExperience (
+	id INT NOT NULL AUTO_INCREMENT
+	,workplace VARCHAR(50) NOT NULL
+	,position VARCHAR(50) NOT NULL	
+	,start_date DATE NOT NULL
+	,finish_date DATE
+	,description VARCHAR(500)
+	,PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE Skill (
+	id INT NOT NULL AUTO_INCREMENT
+	,skill VARCHAR(50) NOT NULL
+	,description VARCHAR(500)
+	,PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE Language (
+	id INT NOT NULL AUTO_INCREMENT
+	,lang VARCHAR(50) NOT NULL
+	,level VARCHAR(100)
+	,PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

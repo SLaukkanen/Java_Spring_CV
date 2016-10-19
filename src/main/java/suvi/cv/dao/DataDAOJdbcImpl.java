@@ -24,7 +24,7 @@ private JdbcTemplate jdbcTemp;
 	
 public List<Data> findAll() {
 		
-		String sql = "SELECT first_name, last_name, email, address, area_code, city, heading, summary FROM Data;";
+		String sql = "SELECT id, first_name, last_name, birth_day, email, address, area_code, city, heading, summary FROM Data;";
 		RowMapper<Data> mapper = new DataRowMapper();
 		List<Data> data = jdbcTemp.query(sql,mapper);
 
