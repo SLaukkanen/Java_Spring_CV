@@ -26,6 +26,9 @@ buildSrc/build
 
 /target/
 
+node_modules
+bower_components
+
 # Eclipse artifacts, including WTP generated manifests
 .classpath
 .project
