@@ -3,11 +3,7 @@ package suvi.cv.bean;
 import java.util.Date;
 
 public interface Data {
-	
-public abstract int getId();
-	
-	public abstract void setId(int id);
-	
+		
 	public abstract String getFirstName();
 	
 	public abstract void setFirstName(String firstName);

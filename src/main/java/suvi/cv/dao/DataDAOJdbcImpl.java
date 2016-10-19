@@ -1,6 +1,5 @@
 package suvi.cv.dao;
 
-import java.util.List;
 import javax.inject.Inject;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -22,11 +21,11 @@ private JdbcTemplate jdbcTemp;
 		this.jdbcTemp = jdbcTemp;
 	}
 	
-public List<Data> findAll() {
+public Data getData() {
 		
-		String sql = "SELECT id, first_name, last_name, birth_day, email, address, area_code, city, heading, summary FROM Data;";
+		String sql = "SELECT first_name, last_name, birth_day, email, address, area_code, city, heading, summary FROM Data;";
 		RowMapper<Data> mapper = new DataRowMapper();
-		List<Data> data = jdbcTemp.query(sql,mapper);
+		Data data = (Data) jdbcTemp.query(sql,mapper);
 
 		return data;
 	}

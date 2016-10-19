@@ -13,7 +13,6 @@ public class DataRowMapper implements RowMapper<Data>{
 	public Data mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Data data = new DataImpl();
 		
-		data.setId(rs.getInt("id"));
 		data.setFirstName(rs.getString("first_name"));
 		data.setLastName(rs.getString("last_name"));
 		data.setBirthDay(rs.getDate("birth_day"));

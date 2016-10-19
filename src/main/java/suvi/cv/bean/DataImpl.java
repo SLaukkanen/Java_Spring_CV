@@ -9,8 +9,6 @@ import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -21,14 +19,9 @@ import javax.persistence.TemporalType;
 @Table(name = "Data")
 public class DataImpl implements Data{
 	
-	@Column(name="id")
-	@Basic(optional = false)
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-	
 	@Column(name="first_name")
 	@Basic(optional = false)
+	@Id
 	@Size(min = 1, max = 50)
 	private String firstName;
 	
@@ -88,11 +81,10 @@ public class DataImpl implements Data{
 		// TODO Auto-generated constructor stub
 	}
 
-	public DataImpl(int id, String firstName, String lastName, Date birthDay,
+	public DataImpl(String firstName, String lastName, Date birthDay,
 			String email, String address, String areaCode, String city,
 			String phone, String heading, String summary) {
 		super();
-		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.birthDay = birthDay;
@@ -103,14 +95,6 @@ public class DataImpl implements Data{
 		this.phone = phone;
 		this.heading = heading;
 		this.summary = summary;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -195,11 +179,12 @@ public class DataImpl implements Data{
 
 	@Override
 	public String toString() {
-		return "DataImpl [id=" + id + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", birthDay=" + birthDay
-				+ ", email=" + email + ", address=" + address + ", areaCode="
-				+ areaCode + ", city=" + city + ", phone=" + phone
-				+ ", heading=" + heading + ", summary=" + summary + "]";
+		return "DataImpl [firstName=" + firstName + ", lastName=" + lastName
+				+ ", birthDay=" + birthDay + ", email=" + email + ", address="
+				+ address + ", areaCode=" + areaCode + ", city=" + city
+				+ ", phone=" + phone + ", heading=" + heading + ", summary="
+				+ summary + "]";
 	}
 
+	
 }

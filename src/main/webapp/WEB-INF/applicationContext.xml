@@ -14,7 +14,7 @@
 	<import resource="spring-data.xml" />
 	<import resource="spring-servlet.xml" />
 	
-	<!-- SPRING SECURITY -->
+	<!-- SPRING SECURITY 
 
 	<sec:http auto-config="true" use-expressions="true">
 		
@@ -43,6 +43,6 @@
 		</sec:authentication-provider>
 	</sec:authentication-manager>
 	
-	<sec:global-method-security pre-post-annotations="enabled" />
+	<sec:global-method-security pre-post-annotations="enabled" />-->
 	
 </beans>
