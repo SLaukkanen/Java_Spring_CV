@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import suvi.cv.bean.Data;
 import suvi.cv.bean.Education;
+import suvi.cv.bean.Language;
+import suvi.cv.bean.Skill;
 import suvi.cv.bean.WorkExperience;
 import suvi.cv.dao.DataDAO;
 import suvi.cv.dao.EducationDAO;
+import suvi.cv.dao.LanguageDAO;
+import suvi.cv.dao.SkillDAO;
 import suvi.cv.dao.WorkExperienceDAO;
 
 @Controller
@@ -25,6 +29,8 @@ public class DataController {
 	private DataDAO dao;
 	private EducationDAO eDao;
 	private WorkExperienceDAO wDao;
+	private SkillDAO sDao;
+	private LanguageDAO lDao;
 
 	@RequestMapping(value="cv", method=RequestMethod.GET)
 	public String getView(Model model) {
@@ -32,10 +38,14 @@ public class DataController {
 		List<Data> data = new ArrayList<Data>(dao.findAll());
 		List<Education> edu = new ArrayList<Education>(eDao.findAll());
 		List<WorkExperience> workExp = new ArrayList<WorkExperience>(wDao.findAll());
+		List<Skill> skills = new ArrayList<Skill>(sDao.findAll());
+		List<Language> lang = new ArrayList<Language>(lDao.findAll());
 		
 		model.addAttribute("data", data);
 		model.addAttribute("education", edu);
 		model.addAttribute("workexperience", workExp);
+		model.addAttribute("skills", skills);
+		model.addAttribute("language", lang);
 		
 		return "index";
 	}

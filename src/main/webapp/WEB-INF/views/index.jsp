@@ -87,10 +87,16 @@
       </c:forEach>
       <hr>
       <h2>IT Skills</h2>
-      <p>Lorem ipsum...</p>
+      <c:forEach items="${skills}" var="skill">
+      	<p>${skill.skill}</p>
+      	<p>${skill.description}</p>
+      </c:forEach>
       <hr>
       <h2>Languages</h2>
-      <p>Lorem ipsum...</p>
+      <c:forEach items="${lang}" var="l">
+      	<p>${l.lang}</p>
+      	<p>${l.level}</p>
+      </c:forEach>
     </div>
     
      <div class="col-sm-2 sidenav">
