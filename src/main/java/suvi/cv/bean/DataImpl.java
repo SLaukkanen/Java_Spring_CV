@@ -20,58 +20,58 @@ import javax.persistence.TemporalType;
 public class DataImpl implements Data{
 	
 	@Column(name="first_name")
-	@Basic(optional = false)
+	//@Basic(optional = false)
 	@Id
 	@Size(min = 1, max = 50)
 	private String firstName;
 	
 	@Column(name="last_name")
-	@Basic(optional = false)
+	//@Basic(optional = false)
 	@Size(min = 1, max = 50)
 	private String lastName;
 	
 	@Column(name="birth_day")
-	@Basic(optional = true)
+	//@Basic(optional = true)
 	@Temporal(TemporalType.DATE)
 	private Date birthDay;
 	
 	@Column(name="email")
-	@Basic(optional = false)
+	//@Basic(optional = false)
 	@Size(min = 1, max = 50)
 	@Email
 	private String email;
 	
 	@Column(name="address")
-	@Basic(optional = true)
+	//@Basic(optional = true)
 	@Size(min = 0, max = 55)
 	@Pattern(regexp = "\\w\\s\\d\\-")
 	private String address;
 	
 	@Column(name="area_code")
-	@Basic(optional = true)
+	//@Basic(optional = true)
 	@Pattern(regexp = "\\d{5}")
 	private String areaCode;
 	
 	@Column(name="city")
-	@Basic(optional = true)
+	//@Basic(optional = true)
 	@Size(min = 1, max = 30)
 	@Pattern(regexp = "\\w\\-")
 	private String city;
 	
 	@Column(name="phone")
-	@Basic(optional = true)
+	//@Basic(optional = true)
 	@Size(min = 1, max = 15)
 	@Pattern(regexp = "\\d\\-\\+")
 	private String phone;
 	
 	@Column(name="heading")
-	@Basic(optional = true)
+	//@Basic(optional = true)
 	@Size(min = 1, max = 30)
 	@Pattern(regexp = "\\w\\s\\d\\,\\.\\-\\!\\?")
 	private String heading;
 	
 	@Column(name="summary")
-	@Basic(optional = true)
+	//@Basic(optional = true)
 	@Size(min = 1, max = 500)
 	@Pattern(regexp = "\\w\\s\\d\\,\\.\\-\\:\\;")
 	private String summary;

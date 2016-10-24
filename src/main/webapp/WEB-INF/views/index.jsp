@@ -1,8 +1,9 @@
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page pageEncoding="UTF-8"%>
+<%@page session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags"  prefix="spring"%>
 <!DOCTYPE html>
 <html>
@@ -47,11 +48,34 @@
     </div>
     
  	<div class="col-sm-8 text-left"> 
-      <h2>About</h2>
-      <p>Lorem ipsum...</p>
+ 	
+ 	 <c:forEach items="${data}" var="d">
+ 	 
+      <h2>${d.heading}</h2>
+     
+      	<p>Testaillaan</p>
+      	<p>${d.summary}</p>
+      	<p>${d.firstName} ${d.lastName}</p>
+       	<p>${d.birthDay}</p>
+       	<p>${d.address}</p>
+       	<p>${d.areaCode}</p>
+       	<p>${d.city}</p>
+       	<p>${d.email}</p>
+       	<p>${d.phone}</p>
+      </c:forEach>
+      <p>Testaillaan lisää</p>
       <hr>
       <h2>Education</h2>
-      <p>Lorem ipsum...</p>
+      <c:forEach items="${education}" var="edu">
+      	<p>${edu.school}</p>
+      	<p>${edu.degree}</p>
+      	<p>${edu.major}</p>
+      	<p>${edu.minors}</p>
+      	<p>${edu.startYear}</p>
+      	<p>${edu.finishYear}</p>
+      	<p>${edu.dateGraduation}</p>
+      	<p>${edu.description}</p>
+      </c:forEach>
       <hr>
       <h2>Work Experience</h2>
       <p>Lorem ipsum...</p>

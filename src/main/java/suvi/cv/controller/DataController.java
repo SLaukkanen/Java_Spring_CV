@@ -1,5 +1,8 @@
 package suvi.cv.controller;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -8,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import suvi.cv.bean.Data;
+import suvi.cv.bean.Education;
 import suvi.cv.dao.DataDAO;
+import suvi.cv.dao.EducationDAO;
 
 @Controller
 @RequestMapping(value="/")
@@ -16,12 +21,16 @@ public class DataController {
 	
 	@Inject
 	private DataDAO dao;
+	private EducationDAO eDao;
 
 	@RequestMapping(value="cv", method=RequestMethod.GET)
 	public String getView(Model model) {
-		Data data = dao.getData();
+		List<Data> data = new ArrayList<Data>(dao.findAll());
+		List<Education> edu = new ArrayList<Education>(eDao.findAll());
+		//Data data = dao.getData();
 		model.addAttribute("data", data);
+		model.addAttribute("education", edu);
 		return "index";
 	}
-	
+		
 }
