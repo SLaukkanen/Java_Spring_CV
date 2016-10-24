@@ -8,10 +8,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import suvi.cv.bean.Education;
+import suvi.cv.bean.WorkExperience;
 
 @Repository
-public class EducationDAOJdbcImpl implements EducationDAO {
+public class WorkExperienceDAOJdbcImpl implements WorkExperienceDAO{
 	
 	@Inject
 	private JdbcTemplate jdbcTemp;
@@ -24,13 +24,13 @@ public class EducationDAOJdbcImpl implements EducationDAO {
 		this.jdbcTemp = jdbcTemp;
 	}
 	
-	public List<Education> findAll() {
+	public List<WorkExperience> findAll() {
 		
-		String sql = "SELECT id, school, degree, major, minors, start_year, finish_year, date_graduation, description FROM Education;";
-		RowMapper<Education> mapper = new EducationRowMapper();
-		List<Education> edu = jdbcTemp.query(sql, mapper);
+		String sql = "SELECT id, workplace, position, start_date, finish_date, description FROM WorkExperience;";
+		RowMapper<WorkExperience> mapper = new WorkExperienceRowMapper();
+		List<WorkExperience> workExp = jdbcTemp.query(sql, mapper);
 
-		return edu;
+		return workExp;
 	}
 
 }

@@ -78,7 +78,13 @@
       </c:forEach>
       <hr>
       <h2>Work Experience</h2>
-      <p>Lorem ipsum...</p>
+      <c:forEach items="${workexperience}" var="workexp">
+      	<p>${workexp.workplace}</p>
+      	<p>${workexp.position}</p>
+      	<p>${workexp.startDate}</p>
+      	<p>${workexp.finishDate}</p>
+      	<p>${workexp.description}</p>
+      </c:forEach>
       <hr>
       <h2>IT Skills</h2>
       <p>Lorem ipsum...</p>
@@ -88,7 +94,7 @@
     </div>
     
      <div class="col-sm-2 sidenav">
-     <p><a href="https://github.com/SLaukkanen">My GitHub</a></p>
+     <p><a href="https://github.com/SLaukkanen">GitHub</a></p>
     </div>
     
   </div>

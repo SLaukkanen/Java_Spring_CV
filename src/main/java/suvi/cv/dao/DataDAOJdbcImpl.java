@@ -14,7 +14,7 @@ import suvi.cv.bean.Data;
 public class DataDAOJdbcImpl implements DataDAO {
 	
 	@Inject
-private JdbcTemplate jdbcTemp;
+	private JdbcTemplate jdbcTemp;
 	
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemp;
@@ -24,11 +24,10 @@ private JdbcTemplate jdbcTemp;
 		this.jdbcTemp = jdbcTemp;
 	}
 	
-public List<Data> findAll() {
+	public List<Data> findAll() {
 		
 		String sql = "SELECT first_name, last_name, birth_day, email, address, area_code, city, phone, heading, summary FROM Data;";
 		RowMapper<Data> mapper = new DataRowMapper();
-		//Data data = (Data) jdbcTemp.query(sql,mapper);
 		List<Data> data = jdbcTemp.query(sql, mapper);
 
 		return data;

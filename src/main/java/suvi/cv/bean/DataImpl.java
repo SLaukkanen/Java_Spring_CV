@@ -23,11 +23,13 @@ public class DataImpl implements Data{
 	//@Basic(optional = false)
 	@Id
 	@Size(min = 1, max = 50)
+	@Pattern(regexp = "\\w\\s\\-")
 	private String firstName;
 	
 	@Column(name="last_name")
 	//@Basic(optional = false)
 	@Size(min = 1, max = 50)
+	@Pattern(regexp = "\\w\\s\\-")
 	private String lastName;
 	
 	@Column(name="birth_day")

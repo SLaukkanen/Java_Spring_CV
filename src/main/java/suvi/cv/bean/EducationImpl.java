@@ -20,52 +20,52 @@ import javax.validation.constraints.Size;
 public class EducationImpl implements Education {
 	
 	@Column(name = "id")
-	//@Basic(optional = false)
+	@Basic(optional = false)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	@Column(name="school")
-	//@Basic(optional = false)
+	@Basic(optional = false)
 	@Size(min = 1, max = 50)
 	@Pattern(regexp = "\\w\\s\\-")
 	private String school;
 	
 	@Column(name="degree")
-	//@Basic(optional = true)
+	@Basic(optional = false)
 	@Size(min = 1, max = 50)
 	@Pattern(regexp = "\\w\\s\\,\\-")
 	private String degree;
 	
 	@Column(name="major")
-	//@Basic(optional = false)
+	@Basic(optional = false)
 	@Size(min = 1, max = 50)
 	@Pattern(regexp = "\\w\\s")
 	private String major;
 	
 	@Column(name="minors")
-	//@Basic(optional = true)
+	@Basic(optional = true)
 	@Size(min = 0, max = 100)
 	@Pattern(regexp = "\\w\\s\\,")
 	private String minors;
 	
 	@Column(name="star_year")
-	//@Basic(optional = true)
+	@Basic(optional = true)
 	@Pattern(regexp = "\\d{4}")
 	private String startYear;
 	
 	@Column(name="finish_year")
-	//@Basic(optional = true)
+	@Basic(optional = true)
 	@Pattern(regexp = "\\d{4}")
 	private String finishYear;
 	
 	@Column(name="date_graduation")
-	//@Basic(optional = true)
+	@Basic(optional = true)
 	@Temporal(TemporalType.DATE)
 	private Date dateGraduation;
 	
 	@Column(name="description")
-	//@Basic(optional = true)
+	@Basic(optional = true)
 	@Size(min = 1, max = 500)
 	@Pattern(regexp = "\\w\\s\\d\\,\\.\\-\\:\\;")
 	private String description;
