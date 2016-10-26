@@ -15,8 +15,8 @@ public class WorkExperienceRowMapper implements RowMapper<WorkExperience>{
 		workExp.setId(rs.getInt("id"));
 		workExp.setWorkplace(rs.getString("workplace"));		
 		workExp.setPosition(rs.getString("position"));
-		workExp.setStartDate(rs.getDate("start_date"));
-		workExp.setFinishDate(rs.getDate("finish_date"));
+		workExp.setStartDate(rs.getString("start_date"));
+		workExp.setFinishDate(rs.getString("finish_date"));
 		workExp.setDescription(rs.getString("description"));
 		
 		return workExp;

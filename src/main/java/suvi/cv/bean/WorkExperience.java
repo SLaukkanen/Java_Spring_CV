@@ -1,6 +1,5 @@
 package suvi.cv.bean;
 
-import java.util.Date;
 
 public interface WorkExperience {
 	
@@ -16,13 +15,13 @@ public interface WorkExperience {
 	
 	public abstract void setPosition(String position);
 	
-	public abstract Date getStartDate();
+	public abstract String getStartDate();
 	
-	public abstract void setStartDate(Date startDate);
+	public abstract void setStartDate(String startDate);
 	
-	public abstract Date getFinishDate();
+	public abstract String getFinishDate();
 	
-	public abstract void setFinishDate(Date finishDate);
+	public abstract void setFinishDate(String finishDate);
 	
 	public abstract String getDescription();
 	

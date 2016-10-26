@@ -9,11 +9,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About</title>
+  <title>Languages</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="resources/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="resources/styles/form.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
@@ -50,28 +51,26 @@
 <div class="container-fluid text-center">    
       
     <div class="col-sm-8 text-left"> 
-       <c:forEach items="${data}" var="d">
- 	 
-      	<h2>${d.heading}</h2>
-     
-      	<p>${d.summary}</p>
-      	<p>${d.firstName} ${d.lastName}</p>
-       	<p>${d.birthDay}</p>
-       	<p>${d.address}</p>
-       	<p>${d.areaCode}</p>
-       	<p>${d.city}</p>
-       	<p>${d.email}</p>
-       	<p>${d.phone}</p>
-       	<form:form modelAttribute="data" action="update/${d.firstName}" method="get">
-       		<button type="submit" name="action">Update</button>
-       	</form:form>
-       	<form:form modelAttribute="data" action="new" method="get">
-       		<button type="submit" name="action">New</button>
-       	</form:form>
-       	<form:form modelAttribute="data" action="delete/${d.firstName}" method="get">
-       		<button type="submit" name="action">Delete</button>
-       	</form:form>
-      </c:forEach>
+    <form:form modelAttribute="language" action="save_new" method="post">
+	<fieldset>
+		<legend><spring:message code="lang.legend" /></legend>
+				
+				<spring:hasBindErrors name="language">
+					<p class="ErrorTitle"><spring:message code="lang.errors" />:</p>
+					<div class="ErrorBlock"><form:errors path="*"/></div>
+				</spring:hasBindErrors>
+				
+				<p>
+					<form:label	path="lang"><spring:message code="lang.lang" /></form:label>
+					<form:input path="lang" cssErrorClass="ErrorInput"/> <form:errors path="lang" cssClass="ErrorTxt"/>		
+				</p>
+				<p>	
+					<form:label path="lvl"><spring:message code="lang.lvl" /></form:label>
+					<form:input path="lvl" cssErrorClass="ErrorInput"/> <form:errors path="lvl" cssClass="ErrorTxt"/>	
+				</p>
+				<p><button type="submit" name="action">Submit</button></p>
+	</fieldset>
+	</form:form>
     </div>
      
 </div>

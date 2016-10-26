@@ -51,7 +51,7 @@
 <div class="container-fluid text-center">    
       
     <div class="col-sm-8 text-left"> 
-    <form:form modelAttribute="data" action="/data/save_new" method="post">
+    <form:form modelAttribute="data" action="save_new" method="post">
 	<fieldset>
 		<legend><spring:message code="data.legend" /></legend>
 				

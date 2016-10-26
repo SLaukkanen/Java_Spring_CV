@@ -14,6 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="resources/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="resources/styles/form.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
@@ -50,28 +51,32 @@
 <div class="container-fluid text-center">    
       
     <div class="col-sm-8 text-left"> 
-       <c:forEach items="${data}" var="d">
- 	 
-      	<h2>${d.heading}</h2>
-     
-      	<p>${d.summary}</p>
-      	<p>${d.firstName} ${d.lastName}</p>
-       	<p>${d.birthDay}</p>
-       	<p>${d.address}</p>
-       	<p>${d.areaCode}</p>
-       	<p>${d.city}</p>
-       	<p>${d.email}</p>
-       	<p>${d.phone}</p>
-       	<form:form modelAttribute="data" action="update/${d.firstName}" method="get">
-       		<button type="submit" name="action">Update</button>
-       	</form:form>
-       	<form:form modelAttribute="data" action="new" method="get">
-       		<button type="submit" name="action">New</button>
-       	</form:form>
-       	<form:form modelAttribute="data" action="delete/${d.firstName}" method="get">
-       		<button type="submit" name="action">Delete</button>
-       	</form:form>
-      </c:forEach>
+    <form:form modelAttribute="skill" action="/skills/save_new" method="post">
+	<fieldset>
+		<legend><spring:message code="skill.legend" /></legend>
+				
+				<spring:hasBindErrors name="data">
+					<p class="ErrorTitle"><spring:message code="data.errors" />:</p>
+					<div class="ErrorBlock"><form:errors path="*"/></div>
+				</spring:hasBindErrors>
+				
+				<p>
+					<form:label	path="id"><spring:message code="id.skill" /></form:label>
+					<form:input path="id" cssErrorClass="ErrorInput"/> <form:errors path="id" cssClass="ErrorTxt"/>		
+				</p>
+				
+				<p>
+					<form:label	path="skill"><spring:message code="skill.skill" /></form:label>
+					<form:input path="skill" cssErrorClass="ErrorInput"/> <form:errors path="skill" cssClass="ErrorTxt"/>		
+				</p>
+				<p>	
+					<form:label path="description"><spring:message code="skill.description" /></form:label>
+					<form:input path="description" cssErrorClass="ErrorInput"/> <form:errors path="description" cssClass="ErrorTxt"/>	
+				</p>
+				
+				<p><button type="submit" name="action">Submit</button></p>
+	</fieldset>
+	</form:form>
     </div>
      
 </div>

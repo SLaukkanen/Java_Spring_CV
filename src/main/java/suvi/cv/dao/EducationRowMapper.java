@@ -19,7 +19,7 @@ public class EducationRowMapper implements RowMapper<Education>{
 		edu.setMinors(rs.getString("minors"));
 		edu.setStartYear(rs.getString("start_year"));
 		edu.setFinishYear(rs.getString("finish_year"));
-		edu.setDateGraduation(rs.getDate("date_graduation"));
+		edu.setDateGraduation(rs.getString("date_graduation"));
 		edu.setDescription(rs.getString("description"));
 		
 		return edu;

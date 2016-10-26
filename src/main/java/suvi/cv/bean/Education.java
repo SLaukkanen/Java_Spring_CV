@@ -1,7 +1,5 @@
 package suvi.cv.bean;
 
-import java.util.Date;
-
 public interface Education {
 	
 	public abstract int getId();
@@ -32,9 +30,9 @@ public interface Education {
 	
 	public abstract void setFinishYear(String finishYear);
 	
-	public abstract Date getDateGraduation();
+	public abstract String getDateGraduation();
 	
-	public abstract void setDateGraduation(Date dateGraduation);
+	public abstract void setDateGraduation(String dateGraduation);
 	
 	public abstract String getDescription();
 	

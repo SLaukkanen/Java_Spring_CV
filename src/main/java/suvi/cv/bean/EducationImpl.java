@@ -1,6 +1,5 @@
 package suvi.cv.bean;
 
-import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
@@ -9,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -61,8 +58,7 @@ public class EducationImpl implements Education {
 	
 	@Column(name="date_graduation")
 	@Basic(optional = true)
-	@Temporal(TemporalType.DATE)
-	private Date dateGraduation;
+	private String dateGraduation;
 	
 	@Column(name="description")
 	@Basic(optional = true)
@@ -77,7 +73,7 @@ public class EducationImpl implements Education {
 
 	public EducationImpl(int id, String school, String degree, String major,
 			String minors, String startYear, String finishYear,
-			Date dateGraduation, String description) {
+			String dateGraduation, String description) {
 		super();
 		this.id = id;
 		this.school = school;
@@ -146,11 +142,11 @@ public class EducationImpl implements Education {
 		this.finishYear = finishYear;
 	}
 
-	public Date getDateGraduation() {
+	public String getDateGraduation() {
 		return dateGraduation;
 	}
 
-	public void setDateGraduation(Date dateGraduation) {
+	public void setDateGraduation(String dateGraduation) {
 		this.dateGraduation = dateGraduation;
 	}
 

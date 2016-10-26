@@ -1,6 +1,5 @@
 package suvi.cv.bean;
 
-import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -9,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -37,13 +34,11 @@ public class WorkExperienceImpl implements WorkExperience {
 	
 	@Column(name="start_date")
 	@Basic(optional = false)
-	@Temporal(TemporalType.DATE)
-	private Date startDate;
+	private String startDate;
 	
 	@Column(name="finish_date")
 	@Basic(optional = true)
-	@Temporal(TemporalType.DATE)
-	private Date finishDate;
+	private String finishDate;
 	
 	@Column(name="description")
 	@Basic(optional = true)
@@ -57,7 +52,7 @@ public class WorkExperienceImpl implements WorkExperience {
 	}
 
 	public WorkExperienceImpl(int id, String workplace, String position,
-			Date startDate, Date finishDate, String description) {
+			String startDate, String finishDate, String description) {
 		super();
 		this.id = id;
 		this.workplace = workplace;
@@ -91,19 +86,19 @@ public class WorkExperienceImpl implements WorkExperience {
 		this.position = position;
 	}
 
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getFinishDate() {
+	public String getFinishDate() {
 		return finishDate;
 	}
 
-	public void setFinishDate(Date finishDate) {
+	public void setFinishDate(String finishDate) {
 		this.finishDate = finishDate;
 	}
 
