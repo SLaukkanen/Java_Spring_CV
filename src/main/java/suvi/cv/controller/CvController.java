@@ -23,10 +23,10 @@ import suvi.cv.dao.WorkExperienceDAO;
 
 @Controller
 @RequestMapping(value="/")
-public class DataController {
+public class CvController {
 	
 	@Inject
-	private DataDAO dao;
+	private DataDAO dDao;
 	private EducationDAO eDao;
 	private WorkExperienceDAO wDao;
 	private SkillDAO sDao;
@@ -35,7 +35,7 @@ public class DataController {
 	@RequestMapping(value="cv", method=RequestMethod.GET)
 	public String getView(Model model) {
 		
-		List<Data> data = new ArrayList<Data>(dao.findAll());
+		List<Data> data = new ArrayList<Data>(dDao.findAll());
 		List<Education> edu = new ArrayList<Education>(eDao.findAll());
 		List<WorkExperience> workExp = new ArrayList<WorkExperience>(wDao.findAll());
 		List<Skill> skills = new ArrayList<Skill>(sDao.findAll());
@@ -45,7 +45,7 @@ public class DataController {
 		model.addAttribute("education", edu);
 		model.addAttribute("workexperience", workExp);
 		model.addAttribute("skills", skills);
-		model.addAttribute("language", lang);
+		model.addAttribute("languages", lang);
 		
 		return "index";
 	}

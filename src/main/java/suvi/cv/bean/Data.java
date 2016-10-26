@@ -1,6 +1,5 @@
 package suvi.cv.bean;
 
-import java.util.Date;
 
 public interface Data {
 		
@@ -12,9 +11,9 @@ public interface Data {
 	
 	public abstract void setLastName(String lastName);
 	
-	public abstract Date getBirthDay();
+	public abstract String getBirthDay();
 	
-	public abstract void setBirthDay(Date birthDay);
+	public abstract void setBirthDay(String birthDay);
 	
 	public abstract String getEmail();
 	

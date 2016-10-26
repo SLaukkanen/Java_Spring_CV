@@ -15,7 +15,7 @@ public class DataRowMapper implements RowMapper<Data>{
 		
 		data.setFirstName(rs.getString("first_name"));
 		data.setLastName(rs.getString("last_name"));
-		data.setBirthDay(rs.getDate("birth_day"));
+		data.setBirthDay(rs.getString("birth_day"));
 		data.setEmail(rs.getString("email"));
 		data.setAddress(rs.getString("address"));
 		data.setAreaCode(rs.getString("area_code"));
