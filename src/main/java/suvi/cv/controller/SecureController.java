@@ -31,9 +31,9 @@ import suvi.cv.dao.LanguageDAO;
 import suvi.cv.dao.SkillDAO;
 import suvi.cv.dao.WorkExperienceDAO;
 
-@Controller
+@Controller("/secure")
 @PreAuthorize("hasRole('ROLE_ADMIN')")
-@RequestMapping(value = "/secure")
+@RequestMapping(value = "/cv/secure")
 public class SecureController {
 	
 	@Inject
@@ -45,7 +45,7 @@ public class SecureController {
 
 	
 	
-	@RequestMapping(value = "/admin", method = RequestMethod.GET)
+	@RequestMapping(value = "admin", method = RequestMethod.GET)
 	public String adminPage(Model model) {
 		
 		return "admin";
@@ -54,7 +54,7 @@ public class SecureController {
 	
 	
 	// View Data
-	@RequestMapping(value = "/data", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/data", method = RequestMethod.GET)
 	public String viewData(Model model) {
 		List<Data> data = new ArrayList<Data>(dDao.findAll());
 		model.addAttribute("data", data);
@@ -229,7 +229,7 @@ public class SecureController {
 	@RequestMapping(value = "/languages", method = RequestMethod.GET)
 	public String viewLanguages(Model model) {
 		List<Language> lang = new ArrayList<Language>(lDao.findAll());
-		model.addAttribute("languages", lang);
+		model.addAttribute("language", lang);
 		
 		return "languages";
 	}
@@ -253,6 +253,6 @@ public class SecureController {
 			lDao.update(lang);
 			return "language";
 		}
-	}
+	}*/
 
 }

@@ -50,28 +50,29 @@
 <div class="container-fluid text-center">    
       
     <div class="col-sm-8 text-left"> 
-       <c:forEach items="${data}" var="d">
- 	 
-      	<h2>${d.heading}</h2>
-     
-      	<p>${d.summary}</p>
-      	<p>${d.firstName} ${d.lastName}</p>
-       	<p>${d.birthDay}</p>
-       	<p>${d.address}</p>
-       	<p>${d.areaCode}</p>
-       	<p>${d.city}</p>
-       	<p>${d.email}</p>
-       	<p>${d.phone}</p>
-       	<form:form modelAttribute="data" action="update/${d.firstName}" method="get">
+       <c:forEach items="${language}" var="lang">
+ 	     
+      	<p>${lang.lang}</p>
+       	<p>${lang.lvl}</p>
+       	
+       	<p>
+       	<form:form modelAttribute="data" action="update/${lang.lang}" method="get">
        		<button type="submit" name="action">Update</button>
        	</form:form>
-       	<form:form modelAttribute="data" action="new" method="get">
-       		<button type="submit" name="action">New</button>
-       	</form:form>
-       	<form:form modelAttribute="data" action="delete/${d.firstName}" method="get">
+       	
+       	
+       	<form:form modelAttribute="data" action="delete/${lang.lang}" method="get">
        		<button type="submit" name="action">Delete</button>
        	</form:form>
+       	</p>
+       	
       </c:forEach>
+      <p>
+      	<form:form modelAttribute="data" action="new" method="get">
+       		<button type="submit" name="action">New</button>
+       	</form:form>
+      </p>
+      
     </div>
      
 </div>

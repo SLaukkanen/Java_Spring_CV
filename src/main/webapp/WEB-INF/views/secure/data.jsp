@@ -62,16 +62,20 @@
        	<p>${d.city}</p>
        	<p>${d.email}</p>
        	<p>${d.phone}</p>
-       	<form:form modelAttribute="data" action="update/${d.firstName}" method="get">
-       		<button type="submit" name="action">Update</button>
-       	</form:form>
-       	<form:form modelAttribute="data" action="new" method="get">
-       		<button type="submit" name="action">New</button>
-       	</form:form>
-       	<form:form modelAttribute="data" action="delete/${d.firstName}" method="get">
-       		<button type="submit" name="action">Delete</button>
-       	</form:form>
+       	<p>
+       		<form:form modelAttribute="data" action="update/${d.firstName}" method="get">
+       			<button type="submit" name="action">Update</button>
+       		</form:form>
+       		<form:form modelAttribute="data" action="delete/${d.firstName}" method="get">
+       			<button type="submit" name="action">Delete</button>
+       		</form:form>
+       	</p>
       </c:forEach>
+      <p>
+      	<form:form modelAttribute="data" action="new" method="get">
+       			<button type="submit" name="action">New</button>
+       	</form:form>
+      </p>
     </div>
      
 </div>

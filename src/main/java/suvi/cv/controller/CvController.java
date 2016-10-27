@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,15 +22,24 @@ import suvi.cv.dao.LanguageDAO;
 import suvi.cv.dao.SkillDAO;
 import suvi.cv.dao.WorkExperienceDAO;
 
-@Controller
+@Controller("/")
 @RequestMapping(value="/")
 public class CvController {
 	
+	//@Autowired
 	@Inject
 	private DataDAO dDao;
+	
+	@Inject
 	private EducationDAO eDao;
+	
+	@Inject
 	private WorkExperienceDAO wDao;
+	
+	@Inject
 	private SkillDAO sDao;
+	
+	@Inject
 	private LanguageDAO lDao;
 
 	@RequestMapping(value="cv", method=RequestMethod.GET)
