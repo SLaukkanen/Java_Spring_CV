@@ -7,9 +7,9 @@
 <%@ taglib uri="http://www.springframework.org/tags"  prefix="spring"%>
 <%@ taglib  uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>About</title>
+  <title>Work Experience</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,28 +50,32 @@
 <div class="container-fluid text-center">    
       
     <div class="col-sm-8 text-left"> 
-       <c:forEach items="${data}" var="d">
+       <c:forEach items="${workexperience}" var="wExp">
  	 
-      	<h2>${d.heading}</h2>
+      	<h2>${wExp.workplace}</h2>
      
-      	<p>${d.summary}</p>
-      	<p>${d.firstName} ${d.lastName}</p>
-       	<p>${d.birthDay}</p>
-       	<p>${d.address}</p>
-       	<p>${d.areaCode}</p>
-       	<p>${d.city}</p>
-       	<p>${d.email}</p>
-       	<p>${d.phone}</p>
-       	<form:form modelAttribute="data" action="update/${d.firstName}" method="get">
+      	<p>${wExp.position}</p>
+       	<p>${wExp.startDate}</p>
+       	<p>${wExp.finishDate}</p>
+       	<p>${wExp.description}</p>
+     	
+     	<p>
+       	<form:form modelAttribute="workexperience" action="update/${wExp.id}" method="get">
        		<button type="submit" name="action">Update</button>
        	</form:form>
-       	<form:form modelAttribute="data" action="new" method="get">
-       		<button type="submit" name="action">New</button>
-       	</form:form>
-       	<form:form modelAttribute="data" action="delete/${d.firstName}" method="get">
+       	
+       	<form:form modelAttribute="workexperience" action="delete/${wExp.id}" method="get">
        		<button type="submit" name="action">Delete</button>
        	</form:form>
+       	</p>
+       	<hr>
       </c:forEach>
+      <p>
+      	<form:form modelAttribute="workexperience" action="new" method="get">
+       		<button type="submit" name="action">New</button>
+       	</form:form>
+      </p>
+      
     </div>
      
 </div>

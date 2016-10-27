@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About</title>
+  <title>Skills</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,28 +50,28 @@
 <div class="container-fluid text-center">    
       
     <div class="col-sm-8 text-left"> 
-       <c:forEach items="${data}" var="d">
- 	 
-      	<h2>${d.heading}</h2>
-     
-      	<p>${d.summary}</p>
-      	<p>${d.firstName} ${d.lastName}</p>
-       	<p>${d.birthDay}</p>
-       	<p>${d.address}</p>
-       	<p>${d.areaCode}</p>
-       	<p>${d.city}</p>
-       	<p>${d.email}</p>
-       	<p>${d.phone}</p>
-       	<form:form modelAttribute="data" action="update/${d.firstName}" method="get">
+       <c:forEach items="${skill}" var="s">
+ 	     
+      	<p>${s.skill}</p>
+      	<p>${s.description}</p>
+      	
+      	<p>
+       	<form:form modelAttribute="skill" action="update/${s.id}" method="get">
        		<button type="submit" name="action">Update</button>
        	</form:form>
-       	<form:form modelAttribute="data" action="new" method="get">
-       		<button type="submit" name="action">New</button>
-       	</form:form>
-       	<form:form modelAttribute="data" action="delete/${d.firstName}" method="get">
+       	
+       	<form:form modelAttribute="skill" action="delete/${s.id}" method="get">
        		<button type="submit" name="action">Delete</button>
        	</form:form>
+       	</p>
+       	
       </c:forEach>
+      <p>
+      	<form:form modelAttribute="skill" action="new" method="get">
+       		<button type="submit" name="action">New</button>
+       	</form:form>
+      </p>
+      
     </div>
      
 </div>

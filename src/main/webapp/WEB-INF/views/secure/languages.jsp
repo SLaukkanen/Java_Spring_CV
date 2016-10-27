@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About</title>
+  <title>Languages</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -56,19 +56,19 @@
        	<p>${lang.lvl}</p>
        	
        	<p>
-       	<form:form modelAttribute="data" action="update/${lang.lang}" method="get">
+       	<form:form modelAttribute="language" action="update/${lang.lang}" method="get">
        		<button type="submit" name="action">Update</button>
        	</form:form>
        	
        	
-       	<form:form modelAttribute="data" action="delete/${lang.lang}" method="get">
+       	<form:form modelAttribute="language" action="delete/${lang.lang}" method="get">
        		<button type="submit" name="action">Delete</button>
        	</form:form>
        	</p>
        	
       </c:forEach>
       <p>
-      	<form:form modelAttribute="data" action="new" method="get">
+      	<form:form modelAttribute="language" action="new" method="get">
        		<button type="submit" name="action">New</button>
        	</form:form>
       </p>
