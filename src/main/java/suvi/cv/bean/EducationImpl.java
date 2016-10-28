@@ -25,25 +25,21 @@ public class EducationImpl implements Education {
 	@Column(name="school")
 	@Basic(optional = false)
 	@Size(min = 1, max = 50)
-	@Pattern(regexp = "\\w\\s\\-")
 	private String school;
 	
 	@Column(name="degree")
 	@Basic(optional = false)
 	@Size(min = 1, max = 50)
-	@Pattern(regexp = "\\w\\s\\,\\-")
 	private String degree;
 	
 	@Column(name="major")
 	@Basic(optional = false)
 	@Size(min = 1, max = 50)
-	@Pattern(regexp = "\\w\\s")
 	private String major;
 	
 	@Column(name="minors")
 	@Basic(optional = true)
 	@Size(min = 0, max = 100)
-	@Pattern(regexp = "\\w\\s\\,")
 	private String minors;
 	
 	@Column(name="star_year")
@@ -53,7 +49,6 @@ public class EducationImpl implements Education {
 	
 	@Column(name="finish_year")
 	@Basic(optional = true)
-	@Pattern(regexp = "\\d{4}")
 	private String finishYear;
 	
 	@Column(name="date_graduation")
@@ -62,8 +57,7 @@ public class EducationImpl implements Education {
 	
 	@Column(name="description")
 	@Basic(optional = true)
-	@Size(min = 1, max = 500)
-	@Pattern(regexp = "\\w\\s\\d\\,\\.\\-\\:\\;")
+	@Size(min = 0, max = 500)
 	private String description;
 
 	public EducationImpl() {

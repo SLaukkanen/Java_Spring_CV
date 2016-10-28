@@ -19,13 +19,11 @@ public class DataImpl implements Data{
 	@Basic(optional = false)
 	@Id
 	@Size(min = 1, max = 50)
-	@Pattern(regexp = "\\w\\s\\-")
 	private String firstName;
 	
 	@Column(name="last_name")
 	@Basic(optional = false)
 	@Size(min = 1, max = 50)
-	@Pattern(regexp = "\\w\\s\\-")
 	private String lastName;
 	
 	@Column(name="birth_day")
@@ -41,7 +39,6 @@ public class DataImpl implements Data{
 	@Column(name="address")
 	@Basic(optional = true)
 	@Size(min = 0, max = 55)
-	@Pattern(regexp = "\\w\\s\\d\\-")
 	private String address;
 	
 	@Column(name="area_code")
@@ -52,25 +49,22 @@ public class DataImpl implements Data{
 	@Column(name="city")
 	@Basic(optional = true)
 	@Size(min = 1, max = 30)
-	@Pattern(regexp = "\\w\\-")
+	
 	private String city;
 	
 	@Column(name="phone")
 	@Basic(optional = true)
 	@Size(min = 1, max = 15)
-	@Pattern(regexp = "\\d\\-\\+")
 	private String phone;
 	
 	@Column(name="heading")
 	@Basic(optional = true)
 	@Size(min = 1, max = 30)
-	@Pattern(regexp = "\\w\\s\\d\\,\\.\\-\\!\\?")
 	private String heading;
 	
 	@Column(name="summary")
 	@Basic(optional = true)
 	@Size(min = 1, max = 500)
-	@Pattern(regexp = "\\w\\s\\d\\,\\.\\-\\:\\;")
 	private String summary;
 	
 	public DataImpl() {

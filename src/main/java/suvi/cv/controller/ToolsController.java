@@ -51,6 +51,7 @@ public class ToolsController {
 	@Inject
 	private LanguageDAO lDao;
 	
+	
 	// View Data
 	@RequestMapping(value = "/data", method = RequestMethod.GET)
 		public String viewData(Model model) {
@@ -70,16 +71,14 @@ public class ToolsController {
 		}
 			
 		@RequestMapping(value="/data/save_new", method=RequestMethod.POST)
-		public String saveCreateData(@ModelAttribute(value="data") DataImpl data, BindingResult result){		
+		public String saveCreateData(@ModelAttribute(value="data") @Valid DataImpl data, BindingResult result){		
 				
-			dDao.add(data);
-			/*if (result.hasErrors()) {
+			if (result.hasErrors()) {
 				return "secure/tools/data-new";
 			} else {
 				dDao.add(data);
-				return "secure/tools/data";
-			}*/
-			return "secure/tools/data";
+				return "redirect:../data";
+			}
 		}
 		
 		//Changing info in Data
@@ -100,7 +99,7 @@ public class ToolsController {
 				return "secure/tools/data-update";
 			} else {
 				dDao.update(data);
-				return "secure/tools/data";
+				return "redirect:.././data";
 			}
 		}
 		
@@ -142,7 +141,7 @@ public class ToolsController {
 				return "secure/tools/education-new";
 			} else {
 				eDao.add(edu);
-				return "secure/tools/education";
+				return "redirect:../edu";
 			}
 		}
 		
@@ -163,7 +162,7 @@ public class ToolsController {
 				return "secure/tools/education-update";
 			} else {
 				eDao.update(edu);
-				return "secure/tools/education";
+				return "redirect:.././edu";
 			}
 		}
 		
@@ -203,7 +202,7 @@ public class ToolsController {
 				return "secure/tools/workexperience-new";
 			} else {
 				wDao.add(wExp);
-				return "secure/tools/workexperience";
+				return "redirect:../work";
 			}
 		}		
 		
@@ -224,7 +223,7 @@ public class ToolsController {
 				return "secure/tools/workexperience-update";
 			} else {
 				wDao.update(wExp);
-				return "secure/tools/workexperience";
+				return "redirect:.././work";
 			}
 		}
 		
@@ -244,7 +243,7 @@ public class ToolsController {
 		@RequestMapping(value = "/skills", method = RequestMethod.GET)
 		public String viewSkills(Model model) {
 			List<Skill> skills = new ArrayList<Skill>(sDao.findAll());
-			model.addAttribute("skills", skills);
+			model.addAttribute("skill", skills);
 			
 			return "secure/tools/skills";
 		}
@@ -254,18 +253,18 @@ public class ToolsController {
 		public String createSkill(Model model) {
 			Skill emptySkill = new SkillImpl();
 				
-			model.addAttribute("skills", emptySkill);
+			model.addAttribute("skill", emptySkill);
 			return "secure/tools/skill-new";
 		}
 			
 		@RequestMapping(value="/skills/save_new", method=RequestMethod.POST)
-		public String saveCreateSkill(@ModelAttribute(value="skills") @Valid SkillImpl skill, BindingResult result){		
+		public String saveCreateSkill(@ModelAttribute(value="skill") @Valid SkillImpl skill, BindingResult result){		
 				
 			if (result.hasErrors()) {
 				return "secure/tools/skill-new";
 			} else {
 				sDao.add(skill);
-				return "secure/tools/skills";
+				return "redirect:../skills";
 			}
 		}				
 		
@@ -276,7 +275,7 @@ public class ToolsController {
 			Skill s = sDao.find(id);
 			model.addAttribute("skill", s);
 			
-			return "secure/tools/skill-update";
+			return "redirect:.././skill-update";
 		}
 		
 		@RequestMapping(value="/skills/save_update", method=RequestMethod.POST)
@@ -316,18 +315,18 @@ public class ToolsController {
 		public String createLanguages(Model model) {
 			Language emptyLang = new LanguageImpl();
 				
-			model.addAttribute("languages", emptyLang);
+			model.addAttribute("language", emptyLang);
 			return "secure/tools/language-new";
 		}
 			
 		@RequestMapping(value="/languages/save_new", method=RequestMethod.POST)
-		public String saveCreateLanguages(@ModelAttribute(value="languages") @Valid LanguageImpl lang, BindingResult result){
+		public String saveCreateLanguages(@ModelAttribute(value="language") @Valid LanguageImpl lang, BindingResult result){
 			
 			if (result.hasErrors()) {
 				return "secure/tools/language-new";
 			} else {
 				lDao.add(lang);
-				return "secure/tools/languages";
+				return "redirect:../languages";
 			}
 		}
 		
@@ -349,7 +348,7 @@ public class ToolsController {
 				return "secure/tools/language-update";
 			} else {
 				lDao.update(lang);
-				return "secure/tools/language";
+				return "redirect:.././languages";
 			}
 		}
 		

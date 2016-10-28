@@ -9,12 +9,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Education</title>
+  <title><spring:message code="edu"/></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="resources/styles/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
 </head>
@@ -28,29 +29,31 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index">Suvi Laukkanen</a>
+      <a class="navbar-brand" href="../../"><spring:message code="name"/></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="admin">Home</a></li>
-        <li><a href="data">About</a></li>
-        <li><a href="edu">Education</a></li>
-        <li><a href="work">Work Experience</a></li>
-        <li><a href="skills">Skills</a></li>
-        <li><a href="languages">Languages</a></li>
+        <li class="active"><a href="../admin"><spring:message code="home"/></a></li>
+        <li><a href="data"><spring:message code="about"/></a></li>
+        <li><a href="edu"><spring:message code="edu"/></a></li>
+        <li><a href="work"><spring:message code="work"/></a></li>
+        <li><a href="skills"><spring:message code="skill"/></a></li>
+        <li><a href="languages"><spring:message code="lang"/></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span><sec:authentication property="principal.username"/></a></li>
-		<li><a href="loginpage"><span class="glyphicon glyphicon-log-in"></span> Logout</a>      
+		<li><a href="../../logout"><span class="glyphicon glyphicon-log-in"></span><spring:message code="logout"/></a>      
       </ul>
     </div>
   </div>
 </nav>
   
 <div class="container-fluid text-center">    
-      
-    <div class="col-sm-8 text-left"> 
-       <c:forEach items="${education}" var="edu">
+   <div class="row content">   
+   		<div class="col-sm-2 sidenav">
+   		</div>
+    <div class="col-sm-8 text-left">        
+    	<c:forEach items="${education}" var="edu">
      
       	<h2>${edu.school}</h2>
       	<p>${edu.degree}</p>
@@ -61,22 +64,24 @@
        	<p>${edu.dateGraduation}</p>
        	<p>${edu.description}</p>
        	<p>
-       	<form:form modelAttribute="education" action="update/${edu.id}" method="get">
-       		<button type="submit" name="action">Update</button>
+       	<form:form modelAttribute="education" action="edu/update/${edu.id}" method="get">
+       		<button type="submit"><spring:message code="update"/></button>
        	</form:form>
        	
-       	<form:form modelAttribute="education" action="delete/${edu.id}" method="get">
-       		<button type="submit" name="action">Delete</button>
+       	<form:form modelAttribute="education" action="edu/delete/${edu.id}" method="post">
+       		<button type="submit"><spring:message code="delete"/></button>
        	</form:form>
        	</p>
       </c:forEach>
       <p>
-      <form:form modelAttribute="education" action="new" method="get">
-       		<button type="submit" name="action">New</button>
+      <form:form modelAttribute="education" action="edu/new" method="get">
+       		<button type="submit"><spring:message code="new"/></button>
        	</form:form>
       </p>
     </div>
-     
+     <div class="col-sm-2 sidenav">
+     </div>
+      </div>
 </div>
 
 <footer class="container-fluid text-center">

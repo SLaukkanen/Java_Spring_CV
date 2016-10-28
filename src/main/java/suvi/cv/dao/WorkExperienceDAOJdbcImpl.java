@@ -69,7 +69,7 @@ public class WorkExperienceDAOJdbcImpl implements WorkExperienceDAO{
 	}
 	
 	public WorkExperience find(int id){
-		String sql = "SELECT id, workplace, position, start_date, finish_date, description FROM WorkExperience;";
+		String sql = "SELECT id, workplace, position, start_date, finish_date, description FROM WorkExperience WHERE id = ?;";
 		Object[] parametres = new Object[] {id};
 		RowMapper<WorkExperience> mapper = new WorkExperienceRowMapper();
 

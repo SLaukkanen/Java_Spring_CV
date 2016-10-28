@@ -9,13 +9,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About</title>
+  <title><spring:message code="skill.new"/></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="resources/styles/style.css">
   <link rel="stylesheet" type="text/css" href="resources/styles/form.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
 </head>
@@ -29,56 +30,58 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index">Suvi Laukkanen</a>
+      <a class="navbar-brand" href="../../../"><spring:message code="name"/></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="admin">Home</a></li>
-        <li><a href="data">About</a></li>
-        <li><a href="edu">Education</a></li>
-        <li><a href="work">Work Experience</a></li>
-        <li><a href="skills">Skills</a></li>
-        <li><a href="languages">Languages</a></li>
+        <li class="active"><a href="../../admin"><spring:message code="home"/></a></li>
+        <li><a href="../data"><spring:message code="about"/></a></li>
+        <li><a href="../edu"><spring:message code="edu"/></a></li>
+        <li><a href="../work"><spring:message code="work"/></a></li>
+        <li><a href="../skills"><spring:message code="skill"/></a></li>
+        <li><a href="../languages"><spring:message code="lang"/></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span><sec:authentication property="principal.username"/></a></li>
-		<li><a href="loginpage"><span class="glyphicon glyphicon-log-in"></span> Logout</a>      
+		<li><a href="../../../logout"><span class="glyphicon glyphicon-log-in"></span><spring:message code="logout"/></a>      
       </ul>
     </div>
   </div>
 </nav>
   
 <div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      
+    </div>
       
     <div class="col-sm-8 text-left"> 
-    <form:form modelAttribute="skill" action="/skills/save_new" method="post">
+    <form:form modelAttribute="skill" action="./save_new" method="post">
 	<fieldset>
-		<legend><spring:message code="skill.legend" /></legend>
+		<legend><spring:message code="createnew" /></legend>
 				
-				<spring:hasBindErrors name="data">
-					<p class="ErrorTitle"><spring:message code="data.errors" />:</p>
+				<spring:hasBindErrors name="skill">
+					<p class="ErrorTitle"><spring:message code="skill.errors" />:</p>
 					<div class="ErrorBlock"><form:errors path="*"/></div>
 				</spring:hasBindErrors>
-				
-				<p>
-					<form:label	path="id"><spring:message code="id.skill" /></form:label>
-					<form:input path="id" cssErrorClass="ErrorInput"/> <form:errors path="id" cssClass="ErrorTxt"/>		
-				</p>
-				
+			
 				<p>
 					<form:label	path="skill"><spring:message code="skill.skill" /></form:label>
 					<form:input path="skill" cssErrorClass="ErrorInput"/> <form:errors path="skill" cssClass="ErrorTxt"/>		
 				</p>
 				<p>	
-					<form:label path="description"><spring:message code="skill.description" /></form:label>
+					<form:label path="description"><spring:message code="description" /></form:label>
 					<form:input path="description" cssErrorClass="ErrorInput"/> <form:errors path="description" cssClass="ErrorTxt"/>	
 				</p>
 				
-				<p><button type="submit" name="action">Submit</button></p>
+				<p><button type="submit"><spring:message code="submit" /></button></p>
 	</fieldset>
 	</form:form>
     </div>
-     
+   
+   <div class="col-sm-2 sidenav">
+    </div>
+    </div> 
 </div>
 
 <footer class="container-fluid text-center">

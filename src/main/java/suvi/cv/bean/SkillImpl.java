@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -23,13 +22,11 @@ public class SkillImpl implements Skill{
 	@Column(name="skill")
 	@Basic(optional = false)
 	@Size(min = 1, max = 50)
-	@Pattern(regexp = "\\w\\s\\d\\,\\.\\-\\:\\;")
 	private String skill;
 	
 	@Column(name="description")
 	@Basic(optional = true)
-	@Size(min = 1, max = 500)
-	@Pattern(regexp = "\\w\\s\\d\\,\\.\\-\\:\\;")
+	@Size(min = 0, max = 500)
 	private String description;
 
 	public SkillImpl() {

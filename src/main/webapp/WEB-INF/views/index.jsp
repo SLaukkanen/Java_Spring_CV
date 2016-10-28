@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Suvi Laukkanen</title>
+  <title><spring:message code="name"/></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -26,19 +26,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index">Suvi Laukkanen</a>
+      <a class="navbar-brand" href="index"><spring:message code="name"/></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span><spring:message code="login"/></a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <div id="heading" class="jumbotron text-center">
-  <h1>Suvi Laukkanen</h1>
-  <p>Curriculum Vitae</p> 
+  <h1><spring:message code="name"/></h1>
+  <p><spring:message code="cv"/></p> 
 </div>
   
 <div class="container-fluid text-center">    
@@ -63,7 +63,7 @@
        	<p>${d.phone}</p>
       </c:forEach>
       <hr>
-      <h2>Education</h2>
+      <h2><spring:message code="edu"/></h2>
       <c:forEach items="${education}" var="edu">
       	<p>${edu.school}</p>
       	<p>${edu.degree}</p>
@@ -75,7 +75,7 @@
       	<p>${edu.description}</p>
       </c:forEach>
       <hr>
-      <h2>Work Experience</h2>
+      <h2><spring:message code="work"/></h2>
       <c:forEach items="${workexperience}" var="workexp">
       	<p>${workexp.workplace}</p>
       	<p>${workexp.position}</p>
@@ -84,13 +84,13 @@
       	<p>${workexp.description}</p>
       </c:forEach>
       <hr>
-      <h2>IT Skills</h2>
+      <h2><spring:message code="skill"/></h2>
       <c:forEach items="${skills}" var="skill">
       	<p>${skill.skill}</p>
       	<p>${skill.description}</p>
       </c:forEach>
       <hr>
-      <h2>Languages</h2>
+      <h2><spring:message code="lang"/></h2>
       <c:forEach items="${languages}" var="lang">
       	<p>${lang.lang}</p>
       	<p>${lamg.level}</p>
