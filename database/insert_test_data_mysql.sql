@@ -1,33 +1,4 @@
-INSERT INTO Data
-	(first_name, last_name, birth_day, email, address, area_code, city, phone, heading, summary)
-values
-	('Testi', 'Testinen', '30.01.1984', 'testi@testi.com', 'Puistotie 1', '00330', 'Helsinki', '0501234567', 'Testi', 'testidataatestidataa');
 
-INSERT INTO Data
-	(first_name, last_name, birth_day, email, address, area_code, city, phone, heading, summary)
-values
-	('Testi2', 'Testinen2', '20.01.1945', 'testi2@testi.com', 'Puistotie 2', '00550', 'Helsinki', '0501234568', 'Testi2', 'testidataatestidataa2');	
-	
-INSERT INTO Education
-	(school, degree, major)
-VALUES
-	('Testikoulu', 'Testailija', 'Testit');	
-	
-INSERT INTO WorkExperience
-	(workplace, position, start_date)
-VALUES
-	('Testipaikka', 'Testaaja', '20.02.2001');
-	
-INSERT INTO Skill
-	(skill)
-VALUES
-	('testi');
-	
-INSERT INTO Language
-	(lang)
-VALUES
-	('testiä');
-	
 INSERT INTO
 	authority
 VALUES
@@ -42,4 +13,29 @@ INSERT INTO
 	webuser_authority
 VALUES
 	(1,1,1);
+	
+	
+INSERT INTO Data
+	(first_name, last_name, birth_day, email, address, area_code, city, phone, heading, summary)
+values
+	('Suvi', 'Laukkanen', '30.01.1984', 'suvi.laukkanen2@myy.haaga-helia.com', 'Orapihlajanpolku 7', '01360', 'Vantaa', '0501234567', 'Back-end devaaja', 'Olen innokas ja iloinen ongelmanratkaisija.');		
 
+	INSERT INTO Education
+	(school, degree, major)
+VALUES
+	('Haaga-Helia ammattikorkeakoulu', 'Tradenomi', 'Tietojenkäsittelyn koulutusohjelma');	
+
+	INSERT INTO WorkExperience
+	(workplace, position, start_date)
+VALUES
+	('HOK-Elanto', 'Myyjä', '28.02.2005');
+
+	INSERT INTO Skill
+	(skill)
+VALUES
+	('JavaEE');
+
+	INSERT INTO Language
+	(lang, level)
+VALUES
+	('Englanti', 'Erinomainen');

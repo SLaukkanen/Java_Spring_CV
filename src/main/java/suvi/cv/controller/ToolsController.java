@@ -320,18 +320,17 @@ public class ToolsController {
 			return "secure/tools/language-new";
 		}
 			
-		@RequestMapping(value="/data/save_new", method=RequestMethod.POST)
-		public String saveCreateLanguages(@ModelAttribute(value="languages") LanguageImpl lang, BindingResult result){		
-				
-			lDao.add(lang);
-			/*if (result.hasErrors()) {
+		@RequestMapping(value="/languages/save_new", method=RequestMethod.POST)
+		public String saveCreateLanguages(@ModelAttribute(value="languages") @Valid LanguageImpl lang, BindingResult result){
+			
+			if (result.hasErrors()) {
 				return "secure/tools/language-new";
 			} else {
 				lDao.add(lang);
 				return "secure/tools/languages";
-			}*/
-			return "secure/tools/languages";
-		}		
+			}
+		}
+		
 		
 		//Changing info in language
 		@RequestMapping(value="/languages/update/{lang}", method=RequestMethod.GET)
@@ -355,7 +354,7 @@ public class ToolsController {
 		}
 		
 		//Deleting Data
-		@RequestMapping(value="/data/delete/{lang}", method=RequestMethod.POST)
+		@RequestMapping(value="/languages/delete/{lang}", method=RequestMethod.POST)
 		public String deleteLanguage(@PathVariable String lang) {
 			
 			lDao.delete(lang);
