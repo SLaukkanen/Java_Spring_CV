@@ -26,20 +26,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index">Suvi Laukkanen</a>
+      <a class="navbar-brand" href="../">Suvi Laukkanen</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="admin">Home</a></li>
-        <li><a href="data">About</a></li>
-        <li><a href="edu">Education</a></li>
-        <li><a href="work">Work Experience</a></li>
-        <li><a href="skills">Skills</a></li>
-        <li><a href="languages">Languages</a></li>
+        <li><a href="tools/data">About</a></li>
+        <li><a href="tools/edu">Education</a></li>
+        <li><a href="tools/work">Work Experience</a></li>
+        <li><a href="tools/skills">Skills</a></li>
+        <li><a href="tools/languages">Languages</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span><sec:authentication property="principal.username"/></a></li>
-        <li><a href="loginpage"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+        <li><a href="../logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
       </ul>
     </div>
   </div>
@@ -51,26 +51,26 @@
   <h1>CV</h1><br>
   
   <div class="row">
-    <div id="d_data" class="col-sm-4" href="data">
-      <h2>About</h2>
+    <div id="d_data" class="col-sm-4" >
+      <h2><a href="tools/data">About</a></h2>
      
     </div>
-    <div id="d_edu" class="col-sm-4" href="education"> 
-      <h2>Education</h2>
+    <div id="d_edu" class="col-sm-4" > 
+      <h2><a href="tools/edu">Education</a></h2>
       
     </div>
-    <div id="d_work" class="col-sm-4" href="work">
-      <h2>Work Experience</h2>
+    <div id="d_work" class="col-sm-4" >
+      <h2><a href="tools/work">Work Experience</a></h2>
     </div>
   </div>
   
   <div class="row" >
     <div id="d_skill"class="col-sm-4" href="skills">
-      <h2>IT Skills</h2>
+      <h2><a href="tools/skills">IT Skills</a></h2>
      
     </div>
-    <div id ="d_lang" class="col-sm-4" href="languages"> 
-      <h2>Languages</h2>
+    <div id ="d_lang" class="col-sm-4" > 
+      <h2><a href="tools/languages">Languages</a></h2>
       
     </div>
     
@@ -79,9 +79,9 @@
   
 </div><br>
 
-<footer class="container-fluid text-center">
+<!--  <footer class="container-fluid text-center">
   <p>Copyright &copy; Suvi Laukkanen 2016</p>
-</footer>
+</footer>-->
 
 </body>
 </html>

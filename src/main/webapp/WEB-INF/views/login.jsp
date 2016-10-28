@@ -27,12 +27,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Suvi Laukkanen</a>
+      <a class="navbar-brand" href="../">Suvi Laukkanen</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
       </ul>
     </div>
   </div>
@@ -56,7 +56,7 @@
 	</c:if>
 
 	<c:if test="${not empty loggedout}">
-		<p class="Info">Logout succesful.</p>
+		<p class="Info">Logout successful.</p>
 	</c:if>
 	
 	<form action="j_spring_security_check" method="post">

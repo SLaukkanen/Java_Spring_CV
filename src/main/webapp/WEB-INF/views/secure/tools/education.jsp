@@ -7,7 +7,7 @@
 <%@ taglib uri="http://www.springframework.org/tags"  prefix="spring"%>
 <%@ taglib  uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <title>Education</title>
   <meta charset="utf-8">

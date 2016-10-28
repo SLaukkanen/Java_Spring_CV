@@ -29,11 +29,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index">Suvi Laukkanen</a>
+      <a class="navbar-brand" href="../../">Suvi Laukkanen</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="admin">Home</a></li>
+        <li class="active"><a href="../admin">Home</a></li>
         <li><a href="data">About</a></li>
         <li><a href="edu">Education</a></li>
         <li><a href="work">Work Experience</a></li>
@@ -42,16 +42,20 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span><sec:authentication property="principal.username"/></a></li>
-		<li><a href="loginpage"><span class="glyphicon glyphicon-log-in"></span> Logout</a>      
+		<li><a href="../../logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a>      
       </ul>
     </div>
   </div>
 </nav>
   
-<div class="container-fluid text-center">    
+<div class="container-fluid text-center">  
+	<div class="row content">
+    <div class="col-sm-2 sidenav">
+      
+    </div>  
       
     <div class="col-sm-8 text-left"> 
-    <form:form modelAttribute="data" action="/data/save_new" method="post">
+    <form:form modelAttribute="data" action="/data/save_update" method="post">
 	<fieldset>
 		<legend><spring:message code="data.legend" /></legend>
 				
@@ -62,47 +66,50 @@
 				
 				<p>
 					<form:label	path="firstName"><spring:message code="data.firstname" /></form:label>
-					<form:input path="firstName" cssErrorClass="ErrorInput"/> <form:errors path="firstName" cssClass="ErrorTxt"/>		
+					<form:input value="${data.firstName}" path="firstName" cssErrorClass="ErrorInput"/> <form:errors path="firstName" cssClass="ErrorTxt"/>		
 				</p>
 				<p>	
 					<form:label path="lastName"><spring:message code="data.lastname" /></form:label>
-					<form:input path="lastName" cssErrorClass="ErrorInput"/> <form:errors path="lastName" cssClass="ErrorTxt"/>	
+					<form:input value="${data.lastName}" path="lastName" cssErrorClass="ErrorInput"/> <form:errors path="lastName" cssClass="ErrorTxt"/>	
 				</p>
 				<p>
 					<form:label	path="birthDay"><spring:message code="data.birthday" /></form:label>
-					<form:input path="birthDay" cssErrorClass="ErrorInput"/> <form:errors path="birthDay" cssClass="ErrorTxt"/>		
+					<form:input value="${data.birthDay}" path="birthDay" cssErrorClass="ErrorInput"/> <form:errors path="birthDay" cssClass="ErrorTxt"/>		
 				</p>
 				<p>	
 					<form:label path="email"><spring:message code="data.email" /></form:label>
-					<form:input path="email" cssErrorClass="ErrorInput"/> <form:errors path="email" cssClass="ErrorTxt"/>	
+					<form:input value="${data.email}" path="email" cssErrorClass="ErrorInput"/> <form:errors path="email" cssClass="ErrorTxt"/>	
 				</p>
 				<p>	
 					<form:label path="address"><spring:message code="data.address" /></form:label>
-					<form:input path="address" cssErrorClass="ErrorInput"/> <form:errors path="address" cssClass="ErrorTxt"/>	
+					<form:input value="${data.address}" path="address" cssErrorClass="ErrorInput"/> <form:errors path="address" cssClass="ErrorTxt"/>	
 				</p>
 				<p>	
 					<form:label path="areaCode"><spring:message code="data.areacode" /></form:label>
-					<form:input path="areaCode" cssErrorClass="ErrorInput"/> <form:errors path="areaCode" cssClass="ErrorTxt"/>	
+					<form:input value="${data.areaCode}" path="areaCode" cssErrorClass="ErrorInput"/> <form:errors path="areaCode" cssClass="ErrorTxt"/>	
 				</p>
 				<p>	
 					<form:label path="city"><spring:message code="data.city" /></form:label><br/>
-					<form:input path="city" cssErrorClass="ErrorInput"/> <form:errors path="city" cssClass="ErrorTxt"/>	
+					<form:input value="${data.city}" path="city" cssErrorClass="ErrorInput"/> <form:errors path="city" cssClass="ErrorTxt"/>	
 				</p>
 				<p>	
 					<form:label path="phone"><spring:message code="data.phone" /></form:label><br/>
-					<form:input path="phone" cssErrorClass="ErrorInput"/> <form:errors path="phone" cssClass="ErrorTxt"/>	
+					<form:input value="${data.phone}" path="phone" cssErrorClass="ErrorInput"/> <form:errors path="phone" cssClass="ErrorTxt"/>	
 				</p>
 				<p>	
 					<form:label path="heading"><spring:message code="data.heading" /></form:label><br/>
-					<form:input path="heading" cssErrorClass="ErrorInput"/> <form:errors path="heading" cssClass="ErrorTxt"/>	
+					<form:input value="${data.heading}" path="heading" cssErrorClass="ErrorInput"/> <form:errors path="heading" cssClass="ErrorTxt"/>	
 				</p>
 				<p>	
 					<form:label path="summary"><spring:message code="data.summary" /></form:label><br/>
-					<form:input path="summary" cssErrorClass="ErrorInput"/> <form:errors path="summary" cssClass="ErrorTxt"/>	
+					<form:input value="${data.summary}" path="summary" cssErrorClass="ErrorInput"/> <form:errors path="summary" cssClass="ErrorTxt"/>	
 				</p>
-				<p><button type="submit" name="action">Submit</button></p>
+				<p><button type="submit">Submit</button></p>
 	</fieldset>
 	</form:form>
+    </div>
+   </div>
+   <div class="col-sm-2 sidenav">
     </div>
      
 </div>

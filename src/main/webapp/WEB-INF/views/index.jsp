@@ -53,7 +53,6 @@
  	 
       <h2>${d.heading}</h2>
      
-      	<p>Testaillaan</p>
       	<p>${d.summary}</p>
       	<p>${d.firstName} ${d.lastName}</p>
        	<p>${d.birthDay}</p>
@@ -63,7 +62,6 @@
        	<p>${d.email}</p>
        	<p>${d.phone}</p>
       </c:forEach>
-      <p>Testaillaan lisää</p>
       <hr>
       <h2>Education</h2>
       <c:forEach items="${education}" var="edu">

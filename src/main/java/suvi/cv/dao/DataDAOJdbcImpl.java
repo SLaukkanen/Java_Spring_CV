@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -19,7 +18,6 @@ import suvi.cv.bean.Data;
 @Repository
 public class DataDAOJdbcImpl implements DataDAO {
 	
-	//@Autowired
 	@Inject
 	public JdbcTemplate jdbcTemplate;
 	

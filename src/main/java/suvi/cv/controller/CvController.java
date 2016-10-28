@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,10 +22,9 @@ import suvi.cv.dao.SkillDAO;
 import suvi.cv.dao.WorkExperienceDAO;
 
 @Controller("/")
-//@RequestMapping(value="/")
+@RequestMapping(value="/")
 public class CvController {
 	
-	//@Autowired
 	@Inject
 	private DataDAO dDao;
 	
@@ -67,7 +65,7 @@ public class CvController {
  
 	}
  
-	@RequestMapping(value="/loginfail", method = RequestMethod.GET)
+	@RequestMapping(value="loginfail", method = RequestMethod.GET)
 	public String loginerror(Model model) {
  
 		model.addAttribute("loginerror", "true");
@@ -75,7 +73,7 @@ public class CvController {
  
 	}
  
-	@RequestMapping(value="/logout", method = RequestMethod.GET)
+	@RequestMapping(value="logout", method = RequestMethod.GET)
 	public String logout(Model model) {
 
 		model.addAttribute("loggedout", "true");
