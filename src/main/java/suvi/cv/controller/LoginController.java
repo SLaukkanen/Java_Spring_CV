@@ -5,8 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Controller("/login")
-@RequestMapping (value="/cv/login")
+/*@Controller("/login")
+//@RequestMapping (value="/cv/login")
 public class LoginController {
 	
 	@RequestMapping(value="loginpage", method = RequestMethod.GET)
@@ -32,4 +32,4 @@ public class LoginController {
  
 	}
 
-}
+}*/

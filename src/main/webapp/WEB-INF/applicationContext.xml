@@ -84,13 +84,15 @@
 		<property name="defaultLocale" value="fi" />
 	</bean>
 	
+	<!-- Security -->
+	
 	<sec:http auto-config="true" use-expressions="true">
 		
 		<sec:intercept-url pattern="/secure/*" access="hasRole('ROLE_ADMIN')" />
 		<sec:intercept-url pattern="/*" access="permitAll" />
 
 		<sec:form-login
-			login-page="/loginpage"
+			login-page="/login"
 			default-target-url="/secure/admin"
 			authentication-failure-url="/loginfail" />
 			

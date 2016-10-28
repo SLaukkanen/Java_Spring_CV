@@ -41,7 +41,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span><sec:authentication property="principal.username"/></a></li>
-		<li><a href="loginpage"><span class="glyphicon glyphicon-log-in"></span> Logout</a>      
+		<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Logout</a>      
       </ul>
     </div>
   </div>

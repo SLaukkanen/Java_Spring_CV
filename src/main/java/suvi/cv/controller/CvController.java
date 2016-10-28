@@ -23,7 +23,7 @@ import suvi.cv.dao.SkillDAO;
 import suvi.cv.dao.WorkExperienceDAO;
 
 @Controller("/")
-@RequestMapping(value="/")
+//@RequestMapping(value="/")
 public class CvController {
 	
 	//@Autowired
@@ -42,7 +42,7 @@ public class CvController {
 	@Inject
 	private LanguageDAO lDao;
 
-	@RequestMapping(value="cv", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String getView(Model model) {
 		
 		List<Data> data = new ArrayList<Data>(dDao.findAll());
@@ -58,6 +58,29 @@ public class CvController {
 		model.addAttribute("languages", lang);
 		
 		return "index";
+	}
+	
+	@RequestMapping(value="login", method = RequestMethod.GET)
+	public String login(Model model) {
+ 
+		return "login";
+ 
+	}
+ 
+	@RequestMapping(value="/loginfail", method = RequestMethod.GET)
+	public String loginerror(Model model) {
+ 
+		model.addAttribute("loginerror", "true");
+		return "login";
+ 
+	}
+ 
+	@RequestMapping(value="/logout", method = RequestMethod.GET)
+	public String logout(Model model) {
+
+		model.addAttribute("loggedout", "true");
+		return "login";
+ 
 	}
 		
 }
