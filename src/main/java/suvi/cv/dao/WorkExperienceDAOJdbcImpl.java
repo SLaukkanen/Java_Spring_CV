@@ -32,7 +32,7 @@ public class WorkExperienceDAOJdbcImpl implements WorkExperienceDAO{
 	}
 	
 	public void add(WorkExperience wExp) {
-		final String sql = "INSERT INTO Education(workplace, position, start_date, finish_date, description) VALUES(?,?,?,?,?);";
+		final String sql = "INSERT INTO WorkExperience(workplace, position, start_date, finish_date, description) VALUES(?,?,?,?,?);";
 
 		final String workplace = wExp.getWorkplace();
 		final String position = wExp.getPosition();

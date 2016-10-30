@@ -56,7 +56,6 @@
        <c:forEach items="${workexperience}" var="wExp">
  	 
       	<h2>${wExp.workplace}</h2>
-     	<p>${wExp.id}</p>
       	<p>${wExp.position}</p>
        	<p>${wExp.startDate}</p>
        	<p>${wExp.finishDate}</p>

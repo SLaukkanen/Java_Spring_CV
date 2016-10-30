@@ -58,7 +58,7 @@ public class LanguageDAOJdbcImpl implements LanguageDAO{
 	}
 	
 	public Language find(String lang){
-		String sql = "SELECT first_name, last_name, birth_day, email, address, area_code, city, phone, heading, summary FROM Data where first_name = ?";
+		String sql = "SELECT lang, level FROM Language where lang = ?";
 		Object[] parametres = new Object[] {lang};
 		RowMapper<Language> mapper = new LanguageRowMapper();
 
