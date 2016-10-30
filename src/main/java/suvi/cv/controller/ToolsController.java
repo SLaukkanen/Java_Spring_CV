@@ -275,7 +275,7 @@ public class ToolsController {
 			Skill s = sDao.find(id);
 			model.addAttribute("skill", s);
 			
-			return "redirect:.././skill-update";
+			return "secure/tools/skill-update";
 		}
 		
 		@RequestMapping(value="/skills/save_update", method=RequestMethod.POST)
@@ -285,7 +285,7 @@ public class ToolsController {
 				return "secure/tools/skill-update";
 			} else {
 				sDao.update(skill);
-				return "secure/tools/skill";
+				return "redirect:.././skills";
 			}
 		}
 		
